@@ -1,4 +1,4 @@
-const Footer = () => {
+function Footer () {
   return (
     <footer className="footer">
       <p>&copy; Сапальов В.С | 2026 Усі права захищені.</p>
