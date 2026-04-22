@@ -1,9 +1,12 @@
+import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header'
 import Main from './components/Main'
 import Footer from './components/Footer'
 import './App.css'
+import SoftwareDetails from './components/SoftwareDetails';
+import About from './components/About';
 
 function App() {
   const [cartCount, setCartCount] = useState(() => {
@@ -66,13 +69,24 @@ function App() {
 
   return (
     <div className='app-wraper'>
+      {/*
       {promoTime > 0 && (
       <div className="alert alert-danger text-center m-0 rounded-0">
         Акція закінчується через: <strong>{formatTime(promoTime)}</strong>
-      </div>)}
+      </div>)} 
+      */}
       
       <Header itemCount={cartCount} price={cartPriceCount}/>
-      <Main onAddToCart={addToCartCallback}/>
+      <Routes>
+        {/*Шлях для головної сторінки*/}
+        <Route path="/" element={<Main onAddToCart={addToCartCallback}/>} />
+        {/*Шлях для сторінки about*/}
+        <Route path="/about" element={<About />} />
+        {/*Шлях для сторінки бібліотеки пз*/}
+        <Route path="/catalog" element={<h1 className="text-center mt-5">Тут буде бібліотека користувача</h1>} />
+
+        <Route path='/software/:id' element={<SoftwareDetails />}/>
+      </Routes>
       <Footer />
     </div>
   );
