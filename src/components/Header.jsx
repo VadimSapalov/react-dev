@@ -14,6 +14,9 @@ function Header ({ itemCount, price }) {
         <li className="nav-item">
           <NavLink className="nav-link" to="/about">Про нас</NavLink>
         </li>
+        <li>
+          <NavLink className="nav-link" to="/contact">Контакти</NavLink>
+        </li>
       </ul>
 
       <span className="navbar-text">
