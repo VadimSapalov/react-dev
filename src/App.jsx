@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import './App.css'
 import SoftwareDetails from './components/SoftwareDetails';
 import About from './components/About';
+import ContactPage from './components/ContactPage';
 
 function App() {
   const [cartCount, setCartCount] = useState(() => {
@@ -84,7 +85,7 @@ function App() {
         <Route path="/about" element={<About />} />
         {/*Шлях для сторінки бібліотеки пз*/}
         <Route path="/catalog" element={<h1 className="text-center mt-5">Тут буде бібліотека користувача</h1>} />
-
+        <Route path="/contact" element={<ContactPage />} />
         <Route path='/software/:id' element={<SoftwareDetails />}/>
       </Routes>
       <Footer />
